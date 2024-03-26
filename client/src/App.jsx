@@ -5,9 +5,11 @@ import MainContainer from './Components/MainContainer'
 import Login from './Components/Login'
 import { Route, Routes } from 'react-router-dom'
 import Welcome from './Components/Welcome'
-import Users_Groups from './Components/Users_Groups'
+import Users from './Components/Users'
 import CreateGroups from './Components/CreateGroups'
 import ChatArea from './Components/ChatArea'
+import Groups from './Components/Groups'
+
 
 function App() {
 
@@ -17,8 +19,9 @@ function App() {
         <Route path='/' element={<Login/>}/>
         <Route path='app' element={<MainContainer/>}>
           <Route path='welcome' element={<Welcome/>}/>
-          <Route path='chat' element={<ChatArea/>}/>
-          <Route path='users' element={<Users_Groups/>}/>
+          <Route path='chat/:_id' element={<ChatArea/>}/>
+          <Route path='users' element={<Users/>}/>
+          <Route path='groups' element={<Groups/>}/>
           <Route path='create-groups' element={<CreateGroups/>}/>
         </Route>
         </Routes>
@@ -26,4 +29,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

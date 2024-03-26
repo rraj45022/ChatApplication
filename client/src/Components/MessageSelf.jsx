@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function MessageSelf() {
-    var props2 = { name: "You", message: "Sample Message"}
+function MessageSelf({ props }) {
+  // console.log("Message self Prop : ", props);
   return (
-    <div className='self-message-container'>
-        <div className='messageBox'>
-            <p>{props2.message}</p>
-            <p className='con-timeStamp'>12:00am</p>
-        </div>
+    <div className="self-message-container">
+      <div className="messageBox">
+        <p style={{ color: "black" }}>{props.content}</p>
+        <p className="self-timeStamp" style={{ color: "black" }}>
+          {props.timeStamp}
+        </p>
+      </div>
     </div>
-  )
+  );
 }
 
-export default MessageSelf
+export default MessageSelf;

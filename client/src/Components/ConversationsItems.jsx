@@ -2,6 +2,7 @@ import React from 'react'
 import "./myStyles.css"
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 
 function ConversationsItems({props}) {
@@ -9,7 +10,7 @@ function ConversationsItems({props}) {
   const lightMode = useSelector((state)=>state.themeKey);
 
   return (
-    <div className={"conversation-container" + (lightMode ? "" : " dark")} onClick={()=>{navigate('chat')}}>
+    <div className={"conversation-container" + (lightMode ? "" : " dark")} >
       <p className='con-icon'>{props.name[0]}</p>
       <p className='con-title'>{props.name}</p>
       <p className='con-lastMessage'>{props.lastMessage}</p>
